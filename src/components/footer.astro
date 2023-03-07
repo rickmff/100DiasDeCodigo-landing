@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+import type { FooterLink } from "~/types";
+
+const links: Array<FooterLink> = [
+  {
+    url: "https://github.com",
+    description: "100DiasDeCodigo no GitHub",
+    icon: "fa-brands:github-alt",
+  },
+  {
+    url: "https://discord.gg/he4rt",
+    description: "100DiasDeCodigo no Discord",
+    icon: "fa-brands:discord",
+  },
+  {
+    url: "https://twitter.com/cemDiasDeCodigo",
+    description: "100DiasDeCodigo no Twitter",
+    icon: "fa-brands:twitter",
+  },
+];
+---
+
+<footer class="relative flex h-64 items-center justify-center">
+  <ul class="relative grid grid-cols-2 gap-8 sm:grid-cols-3">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
+            href={link.url}
+          >
+            <span class="sr-only">{link.description}</span>
+            <Icon class="h-full" name={link.icon} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { BeneficiosItem } from "~/types";
+
+const beneficios: Array<BeneficiosItem> = [
+  {
+    description:
+      "Você conhecerá colegas e mentores (e provavelmente amigos!), que te ajudarão na jornada nos dias difíceis.",
+    icon: "iconBeneficio1",
+  },
+  {
+    description:
+      "Um perfil ativo e com diversas contribuições no GitHub mostra sua dedicação e conhecimentos e chama atenção empregadores.",
+    icon: "iconBeneficio2",
+  },
+  {
+    description:
+      "O medo muitas vezes nos impede de inovar. Criando durante 100 dias você irá se acostumar com encarar novos desafios e iniciar projetos.",
+    icon: "iconBeneficio3",
+  },
+  {
+    description:
+      "Estudar diariamente um novo tópico te mantém no fluxo do aprendizado contínuo.",
+    icon: "iconBeneficio4",
+  },
+  {
+    description:
+      "Aprenda as dificuldades e assuntos recorrentes no dia a dia dos desenvolvedores.",
+    icon: "iconBeneficio5",
+  },
+  {
+    description:
+      "No #100DiasDeCodigo incentivamos a criação de projetos reais, que agregam ao seu currículo e poderão atrair recrutadores.",
+    icon: "iconBeneficio6",
+  },
+  {
+    description: "Programar se torna um hábito.",
+    icon: "iconBeneficio7",
+  },
+  {
+    description:
+      "Projetos pequenos e rápidos se acumulam trazendo uma gama de novas experiências e ferramentas.",
+    icon: "iconBeneficio8",
+  },
+  {
+    description:
+      "Às vezes tudo que precisamos para parar de procrastinar é uma meta para seguir e pessoas para acompanhar, isso você encontrará na sua jornada.",
+    icon: "iconBeneficio9",
+  },
+];
+---
+
+<ContentSection title="Benefícios" id="beneficios">
+  <ul class="grid max-w-6xl gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      beneficios.map(({ description, icon }) => (
+        <li class="flex flex-col items-center gap-8 rounded-xl bg-offset p-6">
+          <Icon class="h-40" name={icon} />
+          <p class="text-center text-default text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

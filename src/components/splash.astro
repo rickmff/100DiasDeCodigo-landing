@@ -1,0 +1,34 @@
+---
+import GitHubCorner from "./github-corner.astro";
+---
+
+<section class="background relative h-full bg-fixed">
+  <GitHubCorner />
+  <div class="flex flex-col self-center justify-center relative h-full place-items-center">
+    <span>Venha participar do</span>
+    <br />
+    <h2 class="color-primary">#100DiasDeCodigo</h2>
+    <br />
+    <button class="btn">Come participar</button>
+  </div>
+</section>
+
+<style scoped>
+  .background {
+    background-image: url("../assets/background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  span {
+    font-size: clamp(20px, 10vw,72px);
+    font-weight: bold;
+    color: var(--color-secondary);
+  }
+
+  h2 {
+    font-size: clamp(32px, 10vw, 100px);
+    font-weight: bold;
+  }
+</style>

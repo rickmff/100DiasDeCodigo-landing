@@ -1,0 +1,85 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon";
+---
+
+<ContentSection title="Como participar" id="comoParticipar">
+  <Fragment slot="lead">
+    <ul>
+      <li>
+        <Icon class="iconNumbers" name="iconCircle1" />
+        <div class="content">
+          <h3>Programe</h3>
+          <p>
+            Programe no mínimo <span>uma hora</span> todos os dias pelos próximos
+            <span>100 dias</span>.
+          </p>
+        </div>
+      </li>
+      <li>
+        <Icon class="iconNumbers" name="iconCircle2" />
+        <div class="content">
+          <h3>Tweete</h3>
+          <p>
+            <span>Tweete</span> seu progresso todos os dias com a hashtag <span
+              >#100DiasDeCodigo</span
+            >.
+          </p>
+        </div>
+      </li>
+      <li>
+        <Icon class="iconNumbers" name="iconCircle3" />
+        <div class="content">
+          <h3>Interaja</h3>
+          <p>
+            Todos os dias, entre em <span>contato</span> com pelo menos <span
+              >duas pessoas</span
+            > no Twitter que também estão participando do desafio.
+          </p>
+        </div>
+      </li>
+    </ul>
+    <p>Comprometa-se publicamente com o desafio:</p>
+    <button class="btn"
+      ><a
+        href="https://twitter.com/intent/tweet?text=Eu%20publicamente%20me%20comprometo%20aos%20desafios%20do%20100%20Dias%20De%20Codigo%20começando%20hoje!&url=https://100DaysOfCode.com&hashtags=100DiasDeCodigo"
+        target="_blank">Tweet para começar o desafio!</a
+      ></button
+    >
+  </Fragment>
+</ContentSection>
+
+<style scoped>
+  .iconNumbers {
+    width: 70px;
+    min-width: 70px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .iconNumbers {
+      width: 50px;
+      min-width: 50px;
+    }
+  }
+
+  span {
+    color: var(--color-primary);
+  }
+
+  h3 {
+    color: var(--color-title);
+    font-weight: bold;
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  li {
+    margin-bottom: clamp(50px, 10vw, 100px);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  p {
+    color: var(--color-text-default);
+  }
+</style>
