@@ -2,16 +2,19 @@
 export interface Props {
   id: string;
   title: string;
+  align?: string;
+  extraclass?: string;
 }
 
-const { title, id } = Astro.props;
+const { extraclass, title, id } = Astro.props;
+const align = Astro.props.align || 'center';
 ---
 
 <section
   id={id}
-  class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8"
+  class={`flex scroll-mt-24 flex-col items-${align} gap-4 space-y-8 ${extraclass}`}
 >
-  <div class="flex flex-col items-center gap-4">
+  <div class="flex flex-col items-start gap-4">
     <h2
       class="color-secondary text-center font-bold tracking-tight text-6xl"
     >
