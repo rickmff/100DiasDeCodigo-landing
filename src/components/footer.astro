@@ -4,7 +4,7 @@ import type { FooterLink } from "~/types";
 
 const links: Array<FooterLink> = [
   {
-    url: "https://github.com",
+    url: "https://github.com/rickmff/100DiasDeCodigo-landing",
     description: "100DiasDeCodigo no GitHub",
     icon: "fa-brands:github-alt",
   },
@@ -31,10 +31,13 @@ const links: Array<FooterLink> = [
             href={link.url}
           >
             <span class="sr-only">{link.description}</span>
-            <Icon class="h-full" name={link.icon} />
+            <Icon class="sm:h-full h-12" name={link.icon} />
           </a>
         </li>
       ))
     }
   </ul>
+<!--   <div class="h-5 ">
+    @2023 - #100DiasDeCodigo
+  </div> -->
 </footer>

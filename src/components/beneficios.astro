@@ -52,15 +52,15 @@ const beneficios: Array<BeneficiosItem> = [
 ---
 
 <ContentSection title="Benefícios" id="beneficios">
-  <div class="swiper mySwiper">
+  <div class="swiper-container mySwiper">
     <ul
-      class="swiper-wrapper grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+      class="swiper-wrapper grid max-w-6xl"
     >
       {
         beneficios.map(({ description, icon }) => (
-          <li class="swiper-slide flex flex-col items-center gap-8 rounded-xl bg-offset p-6 h-350">
+          <li class="swiper-slide flex flex-col items-center rounded-xl bg-offset p-6">
             <Icon class="h-40" name={icon} />
-            <p class="text-center text-default text-sm">{description}</p>
+            <p class="text-center text-default text-sm pt-10">{description}</p>
           </li>
         ))
       }
@@ -79,10 +79,36 @@ const beneficios: Array<BeneficiosItem> = [
 <script is:inline>
   new Swiper(".mySwiper", {
     watchSlidesProgress: true,
-    slidesPerView: 3,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 5000,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    // when window width is >= 320px
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 50,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      autoplay: {
+        delay: 5000,
+      },
     },
+    loop: true,
   });
 </script>
+
+<style scoped>
+  li {
+    height: 350px !important;
+  }
+
+  /* basic styles for swiper container */
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+  }
+</style>
