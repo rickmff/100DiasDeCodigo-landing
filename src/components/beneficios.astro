@@ -54,7 +54,7 @@ const beneficios: Array<BeneficiosItem> = [
 <ContentSection title="Benefícios" id="beneficios">
   <div class="swiper-container mySwiper">
     <ul
-      class="swiper-wrapper grid max-w-6xl"
+      class="swiper-wrapper grid"
     >
       {
         beneficios.map(({ description, icon }) => (
@@ -90,7 +90,7 @@ const beneficios: Array<BeneficiosItem> = [
       // when window width is >= 768px
       768: {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 150,
       },
       autoplay: {
         delay: 5000,
