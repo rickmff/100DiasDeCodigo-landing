@@ -1,12 +1,13 @@
 ---
-import "@fontsource/inter/variable.css";
 import Compatibility from "~/components/compatibility.astro";
 import Beneficios from "~/components/beneficios.astro";
 import Footer from "~/components/footer.astro";
-import Header from "~/components/header.astro";
-import ComoParticipar from "~/components/comoParticipar.astro";
+import Participar from "~/components/participar.astro";
 import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
+import Hero from "~/components/hero.astro";
+import Menu from "~/components/menu.astro";
+
+import "@fontsource/inter/variable.css";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -16,7 +17,7 @@ const description =
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<html lang="pt-br" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,7 +35,7 @@ const description =
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- initialize theme -->
+    <!-- theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
 
@@ -58,13 +59,14 @@ const description =
         });
     </script>
   </head>
+
   <body
     class="h-full overflow-x-hidden bg-primary text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Header />
-    <Splash />
+    <Menu />
+    <Hero />
     <div class="space-y-24 bg-primary px-8 py-32">
-      <ComoParticipar />
+      <Participar />
     </div>
     <div class="space-y-24 bg-secondary px-8 py-32">
       <Beneficios />

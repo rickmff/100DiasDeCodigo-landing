@@ -56,9 +56,9 @@ const navItems: Array<NavItem> = [
               <Icon pack="mdi" name="close" class="h-8" />
             </button>
           </header>
-          <h1 class="flex justify-center">
-            #100DiasDeCodigo
-          </h1>
+          <div data-aos="fade-up">
+            <h1 class="flex justify-center">#100DiasDeCodigo</h1>
+          </div>
           <nav>
             <ul class="flex flex-col">
               {
@@ -89,13 +89,13 @@ const navItems: Array<NavItem> = [
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
   const closeNavButton = document.querySelector("#close-nav-button");
-  const logoMenu = document.querySelector("#logoMenu")
-  
+  const logoMenu = document.querySelector("#logoMenu");
+
   invariant(header, "header should not be null");
   invariant(menu, "menu should not be null");
   invariant(openNavButton, "openNavButton should not be null");
   invariant(closeNavButton, "closeNavButton should not be null");
-  invariant(logoMenu, "logoMenu should not be null")
+  invariant(logoMenu, "logoMenu should not be null");
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });
@@ -120,17 +120,6 @@ const navItems: Array<NavItem> = [
     }
   });
 </script>
-
-<noscript>
-  <style>
-    #open-nav-button {
-      display: none;
-    }
-    .display {
-      display: block;
-    }
-  </style>
-</noscript>
 
 <style scoped>
   .fixed-header {

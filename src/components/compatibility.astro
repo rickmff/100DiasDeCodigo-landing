@@ -1,6 +1,6 @@
 ---
 import CompatibilityList from "~/components/compatibility-list.astro";
-import ContentSection from "~/components/content-section.astro";
+import ContentSection from "../layout/content-section.astro";
 import type { CompatibilityItem } from "~/types";
 
 const frameworks: Array<CompatibilityItem> = [
@@ -35,39 +35,6 @@ const frameworks: Array<CompatibilityItem> = [
     url: "https://lit.dev/",
   },
 ];
-
-const platforms: Array<CompatibilityItem> = [
-  {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
-  },
-  {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
-  },
-  {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
-  },
-];
 ---
 
 <ContentSection title="Compatibility" id="compatibility">
@@ -80,10 +47,5 @@ const platforms: Array<CompatibilityItem> = [
     items={frameworks}
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
-  />
-  <CompatibilityList
-    items={platforms}
-    title="Platforms"
-    url="https://docs.astro.build/guides/deploy/"
   />
 </ContentSection>

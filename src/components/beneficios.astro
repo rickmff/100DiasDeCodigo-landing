@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import ContentSection from "~/components/content-section.astro";
+import ContentSection from "../layout/content-section.astro";
 import type { BeneficiosItem } from "~/types";
 
 const beneficios: Array<BeneficiosItem> = [
@@ -52,14 +52,37 @@ const beneficios: Array<BeneficiosItem> = [
 ---
 
 <ContentSection title="Benefícios" id="beneficios">
-  <ul class="grid max-w-6xl gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      beneficios.map(({ description, icon }) => (
-        <li class="flex flex-col items-center gap-8 rounded-xl bg-offset p-6">
-          <Icon class="h-40" name={icon} />
-          <p class="text-center text-default text-sm">{description}</p>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="swiper mySwiper">
+    <ul
+      class="swiper-wrapper grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        beneficios.map(({ description, icon }) => (
+          <li class="swiper-slide flex flex-col items-center gap-8 rounded-xl bg-offset p-6 h-350">
+            <Icon class="h-40" name={icon} />
+            <p class="text-center text-default text-sm">{description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </ContentSection>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+></script>
+<script is:inline>
+  new Swiper(".mySwiper", {
+    watchSlidesProgress: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 5000,
+    },
+  });
+</script>
