@@ -11,7 +11,7 @@ const beneficios: Array<BeneficiosItem> = [
   },
   {
     description:
-      "Um perfil ativo e com diversas contribuições no GitHub mostra sua dedicação e conhecimentos e chama atenção empregadores.",
+      "Um perfil ativo e com diversas contribuições no GitHub mostra sua dedicação e conhecimentos e chama a atenção de empregadores.",
     icon: "iconBeneficio2",
   },
   {
@@ -53,14 +53,12 @@ const beneficios: Array<BeneficiosItem> = [
 
 <ContentSection title="Benefícios" id="beneficios">
   <div class="swiper-container mySwiper">
-    <ul
-      class="swiper-wrapper grid"
-    >
+    <ul class="swiper-wrapper grid">
       {
         beneficios.map(({ description, icon }) => (
           <li class="swiper-slide flex flex-col items-center rounded-xl bg-offset p-6">
             <Icon class="h-40" name={icon} />
-            <p class="text-center text-default text-sm pt-10">{description}</p>
+            <p class="pt-10 text-center text-default text-sm">{description}</p>
           </li>
         ))
       }
