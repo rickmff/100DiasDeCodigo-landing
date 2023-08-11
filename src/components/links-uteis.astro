@@ -1,18 +1,52 @@
 ---
+import type { LinksUteisItem } from "~/types";
 import ContentSection from "../layout/content-section.astro";
+
+const links: Array<LinksUteisItem> = [
+  {
+    name: "Trilha.info",
+    description:
+      "Você conhecerá colegas e mentores (e provavelmente amigos!), que te ajudarão na jornada nos dias difíceis.",
+    tags: ["Brasileiro", "Back-end", "Front-end", "DevOps"],
+    url: "https://fodase.com",
+    thumbnail_url: "https://i.imgur.com/ikPMRq4.png",
+  },
+];
 ---
 
-<ContentSection title="Links Úteis" id="beneficios" align="start" extraclass="sm:pl-8 sm:mx-40">
-  <div class="border-l-4 border-violet-800 pl-4">
-    <h2 class="text-xl color-secondary mb-2">roadmap.danielheart.dev</h2>
-    <p class="text-[#676779]">A ideia desse projeto é organizar todo o conteúdo que eu já produzi sobre programação até o momento e criar uma trilha para ajudar novos desenvolvedores.</p>
-  </div>
-  <div class="border-l-4 border-violet-800 pl-4">
-    <h2 class="text-xl color-secondary mb-2">trilha.info</h2>
-    <p class="text-[#676779]">A Trilha Info é um projeto Open Source com o objetivo de agregar e organizar conteúdos gratuitos em português para pessoas que querem ingressar na área de Tecnologia.</p>
-  </div>
-  <div class="border-l-4 border-violet-800 pl-4">
-    <h2 class="text-xl color-secondary mb-2">roadmap.sh</h2>
-    <p class="text-[#676779]">A roadmap.sh é um esforço de comunidade para criar guias e agregar conteúdos educacionais para ajudar a orientar os desenvolvedores a orientar seus aprendizados.</p>
+<ContentSection
+  title="Links Úteis"
+  id="beneficios"
+  align="start"
+  extraclass="sm:pl-8 sm:mx-40"
+>
+  <div class="grid gap-4 lg:grid-cols-3">
+    {
+      links.map((link) => (
+        <div class="max-w-sm overflow-hidden rounded bg-gray-50 shadow-lg ">
+          <img
+            class="w-full"
+            src="https://i.imgur.com/ikPMRq4.png"
+            alt="Sunset in the mountains"
+          />
+          <div class="px-6 py-4">
+            <div class="mb-2 font-bold text-primary text-xl">Trilha Info</div>
+            <p class="text-gray-700 text-base">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatibus quia, nulla! Maiores et perferendis eaque,
+              exercitationem praesentium nihil.
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            {link.tags?.map((tag) => (
+              <span class="mr-2 mb-2 inline-block rounded-full bg-gray-200 px-3 py-1 font-semibold text-gray-700 text-sm">
+                #{tag}
+              </span>
+            ))}
+          </div>
+          <a href={`${link.url}`} class="text-primary px-6 mx-12">Link</a>
+        </div>
+      ))
+    }
   </div>
 </ContentSection>
