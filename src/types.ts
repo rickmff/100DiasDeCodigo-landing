@@ -9,6 +9,14 @@ export interface BeneficiosItem {
   icon: string;
 }
 
+export interface LinksUteisItem {
+  name: string;
+  url: string;
+  thumbnail_url: string;
+  description: string;
+  tags?: Array<string>;
+}
+
 export interface FooterLink {
   description: string;
   icon: string;
