@@ -1,8 +1,15 @@
 a,
 .btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
+  @apply transition-colors duration-150;
   @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+}
+
+a {
+  @apply hover:text-primary;
+}
+
+.btn {
+  @apply border-2 border-primary hover:bg-transparent hover:text-primary;
 }
 
 .gradient-text {
@@ -11,10 +18,8 @@ a,
 }
 
 button {
-    background-color: var(--color-primary);
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-weight: 500;
-  }
-
-
+  background-color: var(--color-primary);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 500;
+}
