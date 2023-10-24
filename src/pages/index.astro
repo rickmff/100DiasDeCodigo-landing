@@ -9,8 +9,8 @@ import Menu from "~/components/menu.astro";
 import "@fontsource/inter/variable.css";
 import "~/styles/index.css";
 
-const { generator, site } = Astro;
-const image = new URL("thumb.png", site);
+const { generator, url } = Astro;
+const image = new URL("thumb.png", url);
 const description =
   "Programe no mínimo uma hora todos os dias pelos próximos 100 dias.";
 ---
@@ -27,35 +27,36 @@ const description =
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="100 Dias de Código" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
+    <meta content="#6c63ff" data-react-helmet="true" name="theme-color" />
+    <meta property="og:url" content={url} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- theme -->
     <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
+    const themeSaved = localStorage.getItem("theme");
 
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
+    if (themeSaved) {
+      document.documentElement.dataset.theme = themeSaved;
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+    }
 
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+          document.documentElement.dataset.theme = event.matches
+            ? "dark"
+            : "light";
+        }
+      });
     </script>
   </head>
 
