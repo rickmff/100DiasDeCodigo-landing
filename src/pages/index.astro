@@ -9,8 +9,8 @@ import Menu from "~/components/menu.astro";
 import "@fontsource/inter/variable.css";
 import "~/styles/index.css";
 
-const { generator, url } = Astro;
-const image = new URL("thumb.png", url);
+const { generator, site } = Astro;
+const image = new URL("thumb.png", site);
 const description =
   "Programe no mínimo uma hora todos os dias pelos próximos 100 dias.";
 ---
@@ -32,7 +32,7 @@ const description =
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta content="#6c63ff" data-react-helmet="true" name="theme-color" />
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- theme -->
