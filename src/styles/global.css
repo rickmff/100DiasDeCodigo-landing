@@ -17,7 +17,7 @@ a {
   @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
 
-button {
+.btn {
   background-color: var(--color-primary);
   padding: 16px 32px;
   border-radius: 12px;
