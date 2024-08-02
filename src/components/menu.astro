@@ -6,7 +6,7 @@ import type { NavItem } from "~/types";
 const navItems: Array<NavItem> = [
   { title: "Como Participar", url: "#comoParticipar" },
   { title: "Benefícios", url: "#beneficios" },
-   { title: "Links Úteis", url: "#linksUteis" },
+  { title: "Links Úteis", url: "#linksUteis" },
   /* { title: "Perguntas", url: "#perguntas" }, */
 ];
 ---
@@ -36,7 +36,7 @@ const navItems: Array<NavItem> = [
       <button
         id="open-nav-button"
         type="button"
-        class="btn sm:hidden"
+        class="btn border-none sm:hidden"
         aria-label="Navigation"
       >
         <Icon pack="mdi" name="menu" class="h-8" />
@@ -50,7 +50,7 @@ const navItems: Array<NavItem> = [
             <button
               id="close-nav-button"
               type="button"
-              class="btn"
+              class="btn border-none"
               aria-label="Close navigation"
             >
               <Icon pack="mdi" name="close" class="h-8" />
